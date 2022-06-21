@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-const AnimalList = [{
+const animalList = [{
   vrsta: 'zirafa',
   ime: 'Doly',
   datum_rodjenja: (new Date())
@@ -27,14 +27,19 @@ const AnimalList = [{
 
   return (
     <div className="App">
-    <ul>
-    {AnimalList.map((animal, index) => (
-      <li
-      key={index}>{animal.vrsta}  {animal.ime} {animal.datum_rodjenja.toLocaleDateString()}
-      </li>
+<table>
+    {animalList.map((animal, index) => (
+     <tr key={index}>
+     <td>{animal.vrsta} : </td>
+     <td> {animal.ime}, </td>
+     <td>datum rodjenja: 
+         {animal.datumRodjenja
+             ? animal.datumRodjenja.toLocaleDateString()
+             : "Nepoznat"}
+     </td>
+ </tr>
       ))}
-      
-    </ul>
+      </table>
     </div>
   );
 }
