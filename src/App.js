@@ -30,7 +30,7 @@ const AnimalList = [{
     <ul>
     {AnimalList.map((animal, index) => (
       <li
-      key={index}>{animal.vrsta}  {animal.ime} {animal.datum_rodjenja}
+      key={index}>{animal.vrsta}  {animal.ime} {animal.datum_rodjenja.toLocaleDateString()}
       </li>
       ))}
       
